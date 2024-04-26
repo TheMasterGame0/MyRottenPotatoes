@@ -1,0 +1,37 @@
+<%= form_with model: movie do |form| %>
+  <div>
+    <%= form.label "Título" %><br>
+    <%= form.text_field :titulo %>
+    <% movie.errors.full_messages_for(:titulo).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label "Classificação" %><br>
+    <%= form.text_field :classificacao %>
+    <% movie.errors.full_messages_for(:classificacao).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label "Descrição" %><br>
+    <%= form.text_area :descricao %>
+    <% movie.errors.full_messages_for(:descricao).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+  
+  <div>
+    <%= form.label "Data de Lançamento" %><br>
+    <%= form.text_area :dataLancamento %>
+    <% movie.errors.full_messages_for(:dataLancamento).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

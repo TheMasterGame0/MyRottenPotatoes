@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My Rotten Potatoes</title>
+  </head>
+
+  <body>
+    <h1>Filmes</h1>
+
+    <%= link_to "Novo Filme", new_movie_path %>
+
+    <ul>
+      <% @movies.each do |movie| %>
+      <li>
+        <a href="<%= movie_path(movie) %>">
+        <%= movie.titulo %>
+      </li>
+      <% end %>
+    </ul>
+  </body>
+</html>

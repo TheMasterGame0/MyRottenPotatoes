@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My Rotten Potatoes</title>
+  </head>
+
+  <body>
+    <h1><%= @movie.titulo %></h1>
+
+    <p>Classificação Indicativa: <%= @movie.classificacao %> </p>
+    <p>Descrição: <%= @movie.descricao %></p>
+    <p>Data de lançamento: <%= @movie.dataLancamento.strftime ('%F') %></p>
+
+    <button><%= link_to "Editar", edit_movie_path(@movie) %></button>
+    <button><%= link_to "Deletar", movie_path(@movie), data: {
+                    turbo_method: :delete,
+                    turbo_confirm: "Você tem certeza?"
+                  } %></button>
+  </body>
+</html>
